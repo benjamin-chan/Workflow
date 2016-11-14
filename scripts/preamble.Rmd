@@ -1,5 +1,0 @@
-```{r, echo = FALSE}
-setwd("~/Projects/Sandbox/Workflow/scripts")
-library(DiagrammeR)
-library(magrittr)
-```

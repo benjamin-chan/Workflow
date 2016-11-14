@@ -1,0 +1,9 @@
+---
+title: "Analytic Workflow with Git on Exacloud/Norm"
+date: "`r Sys.time()`"
+author: Benjamin Chan (chanb@ohsu.edu)
+output:
+  html_document:
+    toc: true
+    theme: simplex
+---

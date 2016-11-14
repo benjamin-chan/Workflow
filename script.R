@@ -1,12 +1,12 @@
 library(checkpoint)
 checkpoint("2016-10-01", use.knitr = TRUE)
 
-setwd("~/Projects/Sandbox/Workflow/scripts")
+setwd("~/Projects/Sandbox/Workflow")
 
 Sys.time0 <- Sys.time()
 
 sink("script.log")
-files <- c(# "header.yaml",
+files <- c("header.yaml",
            "preamble.Rmd",
            "generateMarkdown.Rmd")
 f <- file("master.Rmd", open = "w")
@@ -18,7 +18,7 @@ for (i in 1:length(files)) {
 close(f)
 library(knitr)
 library(rmarkdown)
-opts_chunk$set(fig.path = "../figures/")
+opts_chunk$set(fig.path = "figures/")
 knit("master.Rmd", output = "README.md")
 # pandoc("../docs/index.md", format = "html")
 file.remove("master.Rmd")
