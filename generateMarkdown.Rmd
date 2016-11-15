@@ -109,10 +109,10 @@ The only constraint is that your local workstation and your remote computer need
 Bare repo location | Pros | Cons
 :---|:---|:---
 Local | Private | Exacloud/Norm won't be able to connect to it
-Box.com | Shareable | Exacloud/Norm won't be able to connect to it
-Home directory on Exacloud/Norm | Private, behind OHSU firewall |
-Group directory on Exacloud/Norm | Shareable, behind OHSU firewall |
-GitHub | Shareable to anyone | In the cloud
+[Box.com](https://ohsu.account.box.com) | Shareable | Exacloud/Norm won't be able to connect to it
+Home directory on Exacloud/Norm `~` | Private, behind OHSU firewall |
+Group directory on Exacloud/Norm `/home/groups/biostats` | Shareable, behind OHSU firewall |
+[GitHub](https://github.com) | Shareable to anyone | In the cloud
 
 Techincally speaking, a bare repository is a repo that doesn't contain any working files.
 Practically speaking, once a bare repo is set up, it's invisible to the user.
