@@ -63,7 +63,7 @@ G <-
 G <-
   G %>%
   add_node(label = "Local") %>%
-  add_node(label = "Bare repository") %>%
+  add_node(label = "Bare repo\na.k.a. origin") %>%
   set_node_attrs(nodes = 2, "color", "grey80") %>%
   set_node_attrs(nodes = 2, "fontcolor", "grey80") %>%
   add_node(label = "Exacloud/Norm") %>%

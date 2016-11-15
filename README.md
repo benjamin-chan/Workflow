@@ -1,6 +1,6 @@
 ---
 title: "Analytic Workflow with Git on Exacloud/Norm"
-date: "2016-11-14 15:56:26"
+date: "2016-11-14 16:03:49"
 author: Benjamin Chan (chanb@ohsu.edu)
 output:
   html_document:
