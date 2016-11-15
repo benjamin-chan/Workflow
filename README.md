@@ -1,6 +1,6 @@
 ---
 title: "Analytic Workflow with Git on Exacloud/Norm"
-date: "2016-11-14 16:03:49"
+date: "2016-11-14 16:30:13"
 author: Benjamin Chan (chanb@ohsu.edu)
 output:
   html_document:
@@ -90,10 +90,10 @@ The only constraint is that your local workstation and your remote computer need
 Bare repo location | Pros | Cons
 :---|:---|:---
 Local | Private | Exacloud/Norm won't be able to connect to it
-Box.com | Shareable | Exacloud/Norm won't be able to connect to it
-Home directory on Exacloud/Norm | Private, behind OHSU firewall |
-Group directory on Exacloud/Norm | Shareable, behind OHSU firewall |
-GitHub | Shareable to anyone | In the cloud
+[Box.com](https://ohsu.account.box.com) | Shareable | Exacloud/Norm won't be able to connect to it
+Home directory on Exacloud/Norm `~` | Private, behind OHSU firewall |
+Group directory on Exacloud/Norm `/home/groups/biostats` | Shareable, behind OHSU firewall |
+[GitHub](https://github.com) | Shareable to anyone | In the cloud
 
 Techincally speaking, a bare repository is a repo that doesn't contain any working files.
 Practically speaking, once a bare repo is set up, it's invisible to the user.
@@ -230,3 +230,15 @@ $ git pull origin master
 # Complete workflow
 
 ![plot of chunk diagramGitWorkflow](figures/diagramGitWorkflow-1.png)
+
+
+# Clone this repo!
+
+From your local Git Bash command line:
+
+```
+$ cd <parent-directory-where-you-want-the-working-directory-to-reside>
+$ git clone <username>@exacloud.ohsu.edu:/home/groups/biostats/chanb/Repos/Workflow.git
+$ cd Workflow
+$ git status
+```
