@@ -158,7 +158,7 @@ G <-
 From your local Git Bash command line:
 
 ```
-git remote add origin <username>@exacloud.ohsu.edu:<repo-name>.git
+$ git remote add origin <username>@exacloud.ohsu.edu:<repo-name>.git
 ```
 
 ```{r, echo = FALSE, fig.height = 2.5}
@@ -179,7 +179,7 @@ G <-
 From your local Git Bash command line:
 
 ```
-git push origin master
+$ git push origin master
 ```
 
 ```{r, echo = FALSE, fig.height = 2.5}
@@ -223,7 +223,7 @@ G <-
 From the Linux command line on Exacloud/Norm:
 
 ```
-git remote add origin <repo-name>.git
+$ git remote add origin <repo-name>.git
 ```
 
 ```{r, echo = FALSE, fig.height = 2.5}
@@ -244,7 +244,7 @@ G <-
 From the Linux command line on Exacloud/Norm:
 
 ```
-git pull origin master
+$ git pull origin master
 ```
 
 ```{r, echo = FALSE, fig.height = 2.5}
@@ -293,7 +293,7 @@ $ git status
 From the Linux command line on Exacloud/Norm:
 
 ```
-git push origin master
+$ git push origin master
 ```
 
 ```{r, echo = FALSE, fig.height = 2.5}
@@ -316,7 +316,7 @@ G <-
 From your local Git Bash command line:
 
 ```
-git pull origin master
+$ git pull origin master
 ```
 
 ```{r, echo = FALSE, fig.height = 2.5}

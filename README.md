@@ -1,6 +1,6 @@
 ---
 title: "Analytic Workflow with Git on Exacloud/Norm"
-date: "2016-11-14 15:53:28"
+date: "2016-11-14 15:56:26"
 author: Benjamin Chan (chanb@ohsu.edu)
 output:
   html_document:
@@ -129,7 +129,7 @@ From the Linux command line on Exacloud/Norm:
 From your local Git Bash command line:
 
 ```
-git remote add origin <username>@exacloud.ohsu.edu:<repo-name>.git
+$ git remote add origin <username>@exacloud.ohsu.edu:<repo-name>.git
 ```
 
 ![plot of chunk unnamed-chunk-5](figures/unnamed-chunk-5-1.png)
@@ -140,7 +140,7 @@ git remote add origin <username>@exacloud.ohsu.edu:<repo-name>.git
 From your local Git Bash command line:
 
 ```
-git push origin master
+$ git push origin master
 ```
 
 ![plot of chunk unnamed-chunk-6](figures/unnamed-chunk-6-1.png)
@@ -162,7 +162,7 @@ $ git init
 From the Linux command line on Exacloud/Norm:
 
 ```
-git remote add origin <repo-name>.git
+$ git remote add origin <repo-name>.git
 ```
 
 ![plot of chunk unnamed-chunk-8](figures/unnamed-chunk-8-1.png)
@@ -173,7 +173,7 @@ git remote add origin <repo-name>.git
 From the Linux command line on Exacloud/Norm:
 
 ```
-git pull origin master
+$ git pull origin master
 ```
 
 ![plot of chunk unnamed-chunk-9](figures/unnamed-chunk-9-1.png)
@@ -210,7 +210,7 @@ $ git status
 From the Linux command line on Exacloud/Norm:
 
 ```
-git push origin master
+$ git push origin master
 ```
 
 ![plot of chunk unnamed-chunk-10](figures/unnamed-chunk-10-1.png)
@@ -221,7 +221,7 @@ git push origin master
 From your local Git Bash command line:
 
 ```
-git pull origin master
+$ git pull origin master
 ```
 
 ![plot of chunk unnamed-chunk-11](figures/unnamed-chunk-11-1.png)
