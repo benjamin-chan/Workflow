@@ -112,8 +112,8 @@ Bare repo location | Pros | Cons
 :---|:---|:---
 Local | Private | Exacloud/Norm won't connect to it
 [Box.com](https://ohsu.account.box.com) | Shareable | Exacloud/Norm won't connect to it
-Home directory on Exacloud/Norm `~` | Private, behind OHSU firewall |
-Group directory on Exacloud/Norm `/home/groups/biostats` | Shareable, behind OHSU firewall |
+Home directory on Exacloud/Norm `~` | Private, behind OHSU firewall | Behind OHSU firewall
+Group directory on Exacloud/Norm `/home/groups/biostats` | Shareable, behind OHSU firewall | Behind OHSU firewall
 [GitHub](https://github.com) | Shareable to anyone | In the cloud
 
 Techincally speaking, a bare repository is a repo that doesn't contain any working files.
@@ -192,79 +192,46 @@ G <-
   set_edge_attrs(from = 1, to = 2, "fontcolor", "black")
 ```
 
-Now, the bare repo is a *clone* of your working directory.
-From this clone, you will make another clone.
+Now, the bare repo is an exact copy of your local working directory.
+From this, you will clone to Exacloud/Norm
 
 
-# Initialize a project repo on Exacloud/Norm filesystem
-
-**Do I want to clone instead??**
+# Clone on Exacloud/Norm filesystem
 
 From the Linux command line on Exacloud/Norm:
 
 1. Navigate into the working directory
-1. Initialize a git repository
+1. Clone for the bare repo
 
 ```
 $ cd <working-directory>
-$ git init
+$ git clone <repo-name>.git
 ```
 
 ```{r, echo = FALSE, fig.height = 2.5}
 G <-
   G %>%
   set_node_attrs(nodes = 3, "color", colAction) %>%
-  set_node_attrs(nodes = 3, "fontcolor", colAction)
-render_graph(G)
-G <-
-  G %>%
-  set_node_attrs(nodes = 3, "color", "black") %>%
-  set_node_attrs(nodes = 3, "fontcolor", "black")
-```
-
-
-# Connect Exacloud/Norm repo to bare
-
-From the Linux command line on Exacloud/Norm:
-
-```
-$ git remote add origin <repo-name>.git
-```
-
-```{r, echo = FALSE, fig.height = 2.5}
-G <-
-  G %>%
+  set_node_attrs(nodes = 3, "fontcolor", colAction) %>%
   set_edge_attrs(from = 2, to = 3, "color", colAction) %>%
-  set_edge_attrs(from = 3, to = 2, "color", colAction)
-render_graph(G)
-G <-
-  G %>%
-  set_edge_attrs(from = 2, to = 3, "color", "grey80") %>%
-  set_edge_attrs(from = 3, to = 2, "color", "grey80")
-```
-
-
-# Pull to your Exacloud/Norm repo
-
-From the Linux command line on Exacloud/Norm:
-
-```
-$ git pull origin master
-```
-
-```{r, echo = FALSE, fig.height = 2.5}
-G <-
-  G %>%
-  set_edge_attrs(from = 2, to = 3, "color", colAction) %>%
+  set_edge_attrs(from = 3, to = 2, "color", "grey80") %>%
   set_edge_attrs(from = 2, to = 3, "penwidth", 2) %>%
   set_edge_attrs(from = 2, to = 3, "fontcolor", colAction)
 render_graph(G)
 G <-
   G %>%
+  set_node_attrs(nodes = 3, "color", "black") %>%
+  set_node_attrs(nodes = 3, "fontcolor", "black") %>%
   set_edge_attrs(from = 2, to = 3, "color", "black") %>%
   set_edge_attrs(from = 2, to = 3, "penwidth", 1) %>%
   set_edge_attrs(from = 2, to = 3, "fontcolor", "black")
 ```
+
+Cloning does 3 things:
+
+1. Initializes the working repo
+1. Establishes the connection to the bare repo
+1. Pulls the contents of the bare repo into the working repo
 
 
 # Create, stage, commit in Exacloud/Norm repo
