@@ -227,7 +227,7 @@ Cloning does 3 things:
 
 Create a `Hello world` file.
 Stage `test.txt` using `git add`.
-Commit changes with a meaningly message using `git commit`.
+Commit changes with a meaningful message using `git commit`.
 Add another line to `test.txt`.
 Stage and commit changes.
 Check `git status` liberally.
