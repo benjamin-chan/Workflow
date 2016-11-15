@@ -1,6 +1,6 @@
 ---
 title: "Analytic Workflow with Git on Exacloud/Norm"
-date: "2016-11-14 16:30:13"
+date: "2016-11-14 21:58:58"
 author: Benjamin Chan (chanb@ohsu.edu)
 output:
   html_document:
@@ -20,9 +20,9 @@ Presentation for OHSU-PSU SPH BDP staff meeting, November 22, 2016.
 
 ---
 
-# Why?
+# Wishlist
 
-Feature checklist
+These are the features I'm looking for in a project management tool:
 
 * **Track** project history
 * **Undo** infinitely
@@ -51,11 +51,9 @@ Feature checklist
 
 ![plot of chunk diagramNonGitWorkflow](figures/diagramNonGitWorkflow-1.png)
 
-I could simply copy-paste or FTP files to make this work.
-However, that only checks the **Sync** feature, and inelegantly at that.
-
+I could simply copy-paste or SFTP files without the **Sync** feature.
 If the data is small and I don't need to scale up, then I can skip the **Sync** feature.
-But I still need to check the other features.
+But I still want the other [features](README.md#wishlist).
 
 
 # Install git
@@ -72,7 +70,11 @@ But I still need to check the other features.
 
 From your local Git Bash command line:
 
+1. Navigate into the working directory
+1. Initialize a git repository
+
 ```
+$ cd <working-directory>
 $ git init
 ```
 
@@ -85,14 +87,14 @@ To make the connection to **Sync** to/from, we need to create something called a
 
 Bare repositories can exist anywhere.
 E.g., on a local drive, on the Exacloud/Norm Linux filesystem, [GitHub](https://github.com).
-The only constraint is that your local workstation and your remote computer need to be able to connect to it.
+The only constraint is connectivity; all computers you use need to be able to *see* the bare repo.
 
 Bare repo location | Pros | Cons
 :---|:---|:---
-Local | Private | Exacloud/Norm won't be able to connect to it
-[Box.com](https://ohsu.account.box.com) | Shareable | Exacloud/Norm won't be able to connect to it
-Home directory on Exacloud/Norm `~` | Private, behind OHSU firewall |
-Group directory on Exacloud/Norm `/home/groups/biostats` | Shareable, behind OHSU firewall |
+Local | Private | Exacloud/Norm won't connect to it
+[Box.com](https://ohsu.account.box.com) | Shareable | Exacloud/Norm won't connect to it
+Home directory on Exacloud/Norm `~` | Private, behind OHSU firewall | Behind OHSU firewall
+Group directory on Exacloud/Norm `/home/groups/biostats` | Shareable, behind OHSU firewall | Behind OHSU firewall
 [GitHub](https://github.com) | Shareable to anyone | In the cloud
 
 Techincally speaking, a bare repository is a repo that doesn't contain any working files.
@@ -104,22 +106,14 @@ Practically speaking, once a bare repo is set up, it's invisible to the user.
 From the Linux command line on Exacloud/Norm:
 
 1. Create a directory with the `.git` extension
-
-   ```
-   $ mkdir <repo-name>.git
-   ```
-
 1. Navigate into the directory
-
-   ```
-   $ cd <repo-name>.git
-   ```
-
 1. Initialize a bare repository
 
-   ```
-   $ git init --bare
-   ```
+```
+$ mkdir <repo-name>.git
+$ cd <repo-name>.git
+$ git init --bare
+```
 
 ![plot of chunk unnamed-chunk-4](figures/unnamed-chunk-4-1.png)
 
@@ -134,6 +128,8 @@ $ git remote add origin <username>@exacloud.ohsu.edu:<repo-name>.git
 
 ![plot of chunk unnamed-chunk-5](figures/unnamed-chunk-5-1.png)
 
+The bare repo is greyed-out because, as I said, it's mostly invisible to the user.
+
 
 # Push your local repo
 
@@ -145,38 +141,29 @@ $ git push origin master
 
 ![plot of chunk unnamed-chunk-6](figures/unnamed-chunk-6-1.png)
 
+Now, the bare repo is an exact copy of your local working directory.
+From this, you will clone to Exacloud/Norm
 
-# Initialize a project repo on Exacloud/Norm filesystem
+
+# Clone on Exacloud/Norm filesystem
 
 From the Linux command line on Exacloud/Norm:
 
+1. Navigate into the working directory
+1. Clone for the bare repo
+
 ```
-$ git init
+$ cd <working-directory>
+$ git clone <repo-name>.git
 ```
 
 ![plot of chunk unnamed-chunk-7](figures/unnamed-chunk-7-1.png)
 
+Cloning does 3 things:
 
-# Connect Exacloud/Norm repo to bare
-
-From the Linux command line on Exacloud/Norm:
-
-```
-$ git remote add origin <repo-name>.git
-```
-
-![plot of chunk unnamed-chunk-8](figures/unnamed-chunk-8-1.png)
-
-
-# Pull to your Exacloud/Norm repo
-
-From the Linux command line on Exacloud/Norm:
-
-```
-$ git pull origin master
-```
-
-![plot of chunk unnamed-chunk-9](figures/unnamed-chunk-9-1.png)
+1. Initializes the working repo
+1. Establishes the connection to the bare repo
+1. Pulls the contents of the bare repo into the working repo
 
 
 # Create, stage, commit in Exacloud/Norm repo
@@ -213,7 +200,7 @@ From the Linux command line on Exacloud/Norm:
 $ git push origin master
 ```
 
-![plot of chunk unnamed-chunk-10](figures/unnamed-chunk-10-1.png)
+![plot of chunk unnamed-chunk-8](figures/unnamed-chunk-8-1.png)
 
 
 # Pull to your local repo
@@ -224,7 +211,7 @@ From your local Git Bash command line:
 $ git pull origin master
 ```
 
-![plot of chunk unnamed-chunk-11](figures/unnamed-chunk-11-1.png)
+![plot of chunk unnamed-chunk-9](figures/unnamed-chunk-9-1.png)
 
 
 # Complete workflow
