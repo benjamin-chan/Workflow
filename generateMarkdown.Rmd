@@ -339,3 +339,15 @@ G <-
 ```{r diagramGitWorkflow, echo = FALSE, fig.height = 2.5}
 render_graph(G)
 ```
+
+
+# Clone this repo!
+
+From your local Git Bash command line:
+
+```
+$ cd <parent-directory-where-you-want-the-working-directory-to-reside>
+$ git clone <username>@exacloud.ohsu.edu:/home/groups/biostats/chanb/Repos/Workflow.git
+$ cd Workflow
+$ git status
+```
