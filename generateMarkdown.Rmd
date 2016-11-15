@@ -1,6 +1,6 @@
 # Wishlist
 
-Thesea are the features I'm looking for in a project management tool:
+These are the features I'm looking for in a project management tool:
 
 * **Track** project history
 * **Undo** infinitely
