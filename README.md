@@ -1,6 +1,6 @@
 ---
 title: "Analytic Workflow with Git on Exacloud/Norm"
-date: "2016-11-14 21:58:58"
+date: "2016-11-15 08:48:12"
 author: Benjamin Chan (chanb@ohsu.edu)
 output:
   html_document:
@@ -18,11 +18,10 @@ Presentation for OHSU-PSU SPH BDP staff meeting, November 22, 2016.
 
 
 
----
 
 # Wishlist
 
-These are the features I'm looking for in a project management tool:
+These are the features I'm looking for in a project management workflow:
 
 * **Track** project history
 * **Undo** infinitely
@@ -32,8 +31,11 @@ These are the features I'm looking for in a project management tool:
   * Most important collaborators: past-self and future-self
 * **Package** project for a code repository
 
+---
 
-# Typical workflow
+# Sync
+
+Typical workflow using a local workstation and a compute cluster
 
 1. Start on local workstation
   1. Initialize and setup a project
@@ -56,7 +58,7 @@ If the data is small and I don't need to scale up, then I can skip the **Sync** 
 But I still want the other [features](README.md#wishlist).
 
 
-# Install git
+## Install git
 
 1. Install [Git](https://git-scm.com/) on local workstation
    * Includes a GUI tool
@@ -64,7 +66,7 @@ But I still want the other [features](README.md#wishlist).
 1. Exacloud/Norm already has git installed
 
 
-# Initialize a local project repo
+## Initialize a local project repo
 
 
 
@@ -81,7 +83,7 @@ $ git init
 ![plot of chunk unnamed-chunk-3](figures/unnamed-chunk-3-1.png)
 
 
-# Bare repositories
+## Bare repositories
 
 To make the connection to **Sync** to/from, we need to create something called a **bare repository**.
 
@@ -101,7 +103,7 @@ Techincally speaking, a bare repository is a repo that doesn't contain any worki
 Practically speaking, once a bare repo is set up, it's invisible to the user.
 
 
-# Initialize a bare repo 
+## Initialize a bare repo 
 
 From the Linux command line on Exacloud/Norm:
 
@@ -118,7 +120,7 @@ $ git init --bare
 ![plot of chunk unnamed-chunk-4](figures/unnamed-chunk-4-1.png)
 
 
-# Connect local repo to bare
+## Connect local repo to bare
 
 From your local Git Bash command line:
 
@@ -131,7 +133,7 @@ $ git remote add origin <username>@exacloud.ohsu.edu:<repo-name>.git
 The bare repo is greyed-out because, as I said, it's mostly invisible to the user.
 
 
-# Push your local repo
+## Push your local repo
 
 From your local Git Bash command line:
 
@@ -145,7 +147,7 @@ Now, the bare repo is an exact copy of your local working directory.
 From this, you will clone to Exacloud/Norm
 
 
-# Clone on Exacloud/Norm filesystem
+## Clone on Exacloud/Norm filesystem
 
 From the Linux command line on Exacloud/Norm:
 
@@ -166,7 +168,7 @@ Cloning does 3 things:
 1. Pulls the contents of the bare repo into the working repo
 
 
-# Create, stage, commit in Exacloud/Norm repo
+## Create, stage, commit in Exacloud/Norm repo
 
 Create a `Hello world` file.
 Stage `test.txt` using `git add`.
@@ -192,7 +194,7 @@ $ git status
 ```
 
 
-# Push your Exacloud/Norm repo
+## Push your Exacloud/Norm repo
 
 From the Linux command line on Exacloud/Norm:
 
@@ -203,7 +205,7 @@ $ git push origin master
 ![plot of chunk unnamed-chunk-8](figures/unnamed-chunk-8-1.png)
 
 
-# Pull to your local repo
+## Pull to your local repo
 
 From your local Git Bash command line:
 
@@ -214,12 +216,12 @@ $ git pull origin master
 ![plot of chunk unnamed-chunk-9](figures/unnamed-chunk-9-1.png)
 
 
-# Complete workflow
+## Complete workflow
 
 ![plot of chunk diagramGitWorkflow](figures/diagramGitWorkflow-1.png)
 
 
-# Clone this repo!
+## Clone this repo!
 
 From your local Git Bash command line:
 
