@@ -1,6 +1,6 @@
-# Why?
+# Wishlist
 
-Feature checklist
+Thesea are the features I'm looking for in a project management tool:
 
 * **Track** project history
 * **Undo** infinitely
@@ -38,11 +38,9 @@ G <-
 render_graph(G)
 ```
 
-I could simply copy-paste or FTP files to make this work.
-However, that only checks the **Sync** feature, and inelegantly at that.
-
+I could simply copy-paste or SFTP files without the **Sync** feature.
 If the data is small and I don't need to scale up, then I can skip the **Sync** feature.
-But I still need to check the other features.
+But I still want the other [features](README.md#wishlist).
 
 
 # Install git
@@ -75,7 +73,11 @@ G <-
 
 From your local Git Bash command line:
 
+1. Navigate into the working directory
+1. Initialize a git repository
+
 ```
+$ cd <working-directory>
 $ git init
 ```
 
@@ -104,12 +106,12 @@ To make the connection to **Sync** to/from, we need to create something called a
 
 Bare repositories can exist anywhere.
 E.g., on a local drive, on the Exacloud/Norm Linux filesystem, [GitHub](https://github.com).
-The only constraint is that your local workstation and your remote computer need to be able to connect to it.
+The only constraint is connectivity; all computers you use need to be able to *see* the bare repo.
 
 Bare repo location | Pros | Cons
 :---|:---|:---
-Local | Private | Exacloud/Norm won't be able to connect to it
-[Box.com](https://ohsu.account.box.com) | Shareable | Exacloud/Norm won't be able to connect to it
+Local | Private | Exacloud/Norm won't connect to it
+[Box.com](https://ohsu.account.box.com) | Shareable | Exacloud/Norm won't connect to it
 Home directory on Exacloud/Norm `~` | Private, behind OHSU firewall |
 Group directory on Exacloud/Norm `/home/groups/biostats` | Shareable, behind OHSU firewall |
 [GitHub](https://github.com) | Shareable to anyone | In the cloud
@@ -123,22 +125,14 @@ Practically speaking, once a bare repo is set up, it's invisible to the user.
 From the Linux command line on Exacloud/Norm:
 
 1. Create a directory with the `.git` extension
-
-   ```
-   $ mkdir <repo-name>.git
-   ```
-
 1. Navigate into the directory
-
-   ```
-   $ cd <repo-name>.git
-   ```
-
 1. Initialize a bare repository
 
-   ```
-   $ git init --bare
-   ```
+```
+$ mkdir <repo-name>.git
+$ cd <repo-name>.git
+$ git init --bare
+```
 
 ```{r, echo = FALSE, fig.height = 2.5}
 G <-
@@ -173,6 +167,8 @@ G <-
   set_edge_attrs(from = 2, to = 1, "color", "grey80")
 ```
 
+The bare repo is greyed-out because, as I said, it's mostly invisible to the user.
+
 
 # Push your local repo
 
@@ -196,12 +192,21 @@ G <-
   set_edge_attrs(from = 1, to = 2, "fontcolor", "black")
 ```
 
+Now, the bare repo is a *clone* of your working directory.
+From this clone, you will make another clone.
+
 
 # Initialize a project repo on Exacloud/Norm filesystem
 
+**Do I want to clone instead??**
+
 From the Linux command line on Exacloud/Norm:
 
+1. Navigate into the working directory
+1. Initialize a git repository
+
 ```
+$ cd <working-directory>
 $ git init
 ```
 
