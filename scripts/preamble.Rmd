@@ -1,0 +1,24 @@
+# Analytic Workflow with Git on Exacloud/Norm
+
+
+Presentation for OHSU-PSU SPH BDP staff meeting, November 22, 2016.
+
+
+```{r, echo = FALSE}
+setwd("~/Projects/Workflow")
+library(DiagrammeR)
+library(magrittr)
+```
+
+
+# Wishlist
+
+These are the features I'm looking for in a project management workflow:
+
+* **Track** project history
+* **Undo** infinitely
+* **Branch** what-if scenarios (without breaking primary analysis)
+* **Sync** local workstation with other computers
+* **Share** with collaborators
+  * Most important collaborators: past-self and future-self
+* **Package** project for a code repository

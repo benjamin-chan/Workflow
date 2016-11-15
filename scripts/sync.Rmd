@@ -1,17 +1,6 @@
-# Wishlist
+# Sync
 
-These are the features I'm looking for in a project management tool:
-
-* **Track** project history
-* **Undo** infinitely
-* **Branch** what-if scenarios (without breaking primary analysis)
-* **Sync** local workstation with other computers
-* **Share** with collaborators
-  * Most important collaborators: past-self and future-self
-* **Package** project for a code repository
-
-
-# Typical workflow
+Typical workflow using a local workstation and a compute cluster
 
 1. Start on local workstation
   1. Initialize and setup a project
@@ -27,7 +16,7 @@ These are the features I'm looking for in a project management tool:
   1. Handoff to stakeholder
   1. Package entire project into a repository for archive
 
-```{r diagramNonGitWorkflow, echo = FALSE, fig.height = 2.5}
+```{r diagramNonGitWorkflow, echo = FALSE}
 G <-
   create_graph(graph_attrs = c("rankdir = LR"),
                node_attrs = c("fontname = \"Helvetica\"")) %>%
@@ -43,7 +32,7 @@ If the data is small and I don't need to scale up, then I can skip the **Sync** 
 But I still want the other [features](README.md#wishlist).
 
 
-# Install git
+## Install git
 
 1. Install [Git](https://git-scm.com/) on local workstation
    * Includes a GUI tool
@@ -51,7 +40,7 @@ But I still want the other [features](README.md#wishlist).
 1. Exacloud/Norm already has git installed
 
 
-# Initialize a local project repo
+## Initialize a local project repo
 
 ```{r, echo = FALSE}
 G <-
@@ -81,7 +70,7 @@ $ cd <working-directory>
 $ git init
 ```
 
-```{r, echo = FALSE, fig.height = 2.5}
+```{r, echo = FALSE}
 colAction <- "green"
 colHide <- rgb(0, 0, 0, 0)
 G <-
@@ -100,7 +89,7 @@ G <-
 ```
 
 
-# Bare repositories
+## Bare repositories
 
 To make the connection to **Sync** to/from, we need to create something called a **bare repository**.
 
@@ -120,7 +109,7 @@ Techincally speaking, a bare repository is a repo that doesn't contain any worki
 Practically speaking, once a bare repo is set up, it's invisible to the user.
 
 
-# Initialize a bare repo 
+## Initialize a bare repo 
 
 From the Linux command line on Exacloud/Norm:
 
@@ -134,7 +123,7 @@ $ cd <repo-name>.git
 $ git init --bare
 ```
 
-```{r, echo = FALSE, fig.height = 2.5}
+```{r, echo = FALSE}
 G <-
   G %>%
   set_node_attrs(nodes = 2, "color", colAction) %>%
@@ -147,7 +136,7 @@ G <-
 ```
 
 
-# Connect local repo to bare
+## Connect local repo to bare
 
 From your local Git Bash command line:
 
@@ -155,7 +144,7 @@ From your local Git Bash command line:
 $ git remote add origin <username>@exacloud.ohsu.edu:<repo-name>.git
 ```
 
-```{r, echo = FALSE, fig.height = 2.5}
+```{r, echo = FALSE}
 G <-
   G %>%
   set_edge_attrs(from = 1, to = 2, "color", colAction) %>%
@@ -170,7 +159,7 @@ G <-
 The bare repo is greyed-out because, as I said, it's mostly invisible to the user.
 
 
-# Push your local repo
+## Push your local repo
 
 From your local Git Bash command line:
 
@@ -178,7 +167,7 @@ From your local Git Bash command line:
 $ git push origin master
 ```
 
-```{r, echo = FALSE, fig.height = 2.5}
+```{r, echo = FALSE}
 G <-
   G %>%
   set_edge_attrs(from = 1, to = 2, "color", colAction) %>%
@@ -196,7 +185,7 @@ Now, the bare repo is an exact copy of your local working directory.
 From this, you will clone to Exacloud/Norm
 
 
-# Clone on Exacloud/Norm filesystem
+## Clone on Exacloud/Norm filesystem
 
 From the Linux command line on Exacloud/Norm:
 
@@ -208,7 +197,7 @@ $ cd <working-directory>
 $ git clone <repo-name>.git
 ```
 
-```{r, echo = FALSE, fig.height = 2.5}
+```{r, echo = FALSE}
 G <-
   G %>%
   set_node_attrs(nodes = 3, "color", colAction) %>%
@@ -234,7 +223,7 @@ Cloning does 3 things:
 1. Pulls the contents of the bare repo into the working repo
 
 
-# Create, stage, commit in Exacloud/Norm repo
+## Create, stage, commit in Exacloud/Norm repo
 
 Create a `Hello world` file.
 Stage `test.txt` using `git add`.
@@ -260,7 +249,7 @@ $ git status
 ```
 
 
-# Push your Exacloud/Norm repo
+## Push your Exacloud/Norm repo
 
 From the Linux command line on Exacloud/Norm:
 
@@ -268,7 +257,7 @@ From the Linux command line on Exacloud/Norm:
 $ git push origin master
 ```
 
-```{r, echo = FALSE, fig.height = 2.5}
+```{r, echo = FALSE}
 G <-
   G %>%
   set_edge_attrs(from = 3, to = 2, "color", colAction) %>%
@@ -283,7 +272,7 @@ G <-
 ```
 
 
-# Pull to your local repo
+## Pull to your local repo
 
 From your local Git Bash command line:
 
@@ -291,7 +280,7 @@ From your local Git Bash command line:
 $ git pull origin master
 ```
 
-```{r, echo = FALSE, fig.height = 2.5}
+```{r, echo = FALSE}
 G <-
   G %>%
   set_edge_attrs(from = 2, to = 1, "color", colAction) %>%
@@ -306,14 +295,14 @@ G <-
 ```
 
 
-# Complete workflow
+## Complete workflow
 
-```{r diagramGitWorkflow, echo = FALSE, fig.height = 2.5}
+```{r diagramGitWorkflow, echo = FALSE}
 render_graph(G)
 ```
 
 
-# Clone this repo!
+## Clone this repo!
 
 From your local Git Bash command line:
 

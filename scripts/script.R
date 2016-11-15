@@ -1,14 +1,14 @@
+setwd("~/Projects/Workflow")
+
 library(checkpoint)
 checkpoint("2016-10-01", use.knitr = TRUE)
-
-setwd("~/Projects/Sandbox/Workflow")
 
 Sys.time0 <- Sys.time()
 
 sink("script.log")
-files <- c("header.yaml",
-           "preamble.Rmd",
-           "generateMarkdown.Rmd")
+files <- c("scripts/header.yaml",
+           "scripts/preamble.Rmd",
+           "scripts/sync.Rmd")
 f <- file("master.Rmd", open = "w")
 for (i in 1:length(files)) {
     x <- readLines(files[i])
