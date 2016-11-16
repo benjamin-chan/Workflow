@@ -1,6 +1,6 @@
 ---
 title: "Analytic Workflow with Git on Exacloud/Norm"
-date: "2016-11-15 08:48:12"
+date: "2016-11-16 15:39:08"
 author: Benjamin Chan (chanb@ohsu.edu)
 output:
   html_document:
@@ -30,6 +30,15 @@ These are the features I'm looking for in a project management workflow:
 * **Share** with collaborators
   * Most important collaborators: past-self and future-self
 * **Package** project for a code repository
+
+
+# Git tutorials
+
+There are tons of Git and GitHub tutorials.
+These have a data analyst focus.
+
+* Karl Broman's [tutorial](http://kbroman.org/github_tutorial)
+* Mine Cetinkaya-Rundel's [tutorial](http://www2.stat.duke.edu/~cr173/Sta323_Sp16/git.html)
 
 ---
 
@@ -81,6 +90,8 @@ $ git init
 ```
 
 ![plot of chunk unnamed-chunk-3](figures/unnamed-chunk-3-1.png)
+
+If your local working directory is populated with working files, then you'll want to `git commit` these files.
 
 
 ## Bare repositories
