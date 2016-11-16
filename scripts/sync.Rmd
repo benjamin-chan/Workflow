@@ -88,6 +88,8 @@ G <-
   set_node_attrs(nodes = 1, "fontcolor", "black")
 ```
 
+If your local working directory is populated with working files, then you'll want to `git commit` these files.
+
 
 ## Bare repositories
 
