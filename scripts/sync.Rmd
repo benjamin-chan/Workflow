@@ -144,6 +144,7 @@ From your local Git Bash command line:
 
 ```
 $ git remote add origin <username>@exacloud.ohsu.edu:<repo-name>.git
+$ git remote -v
 ```
 
 ```{r, echo = FALSE}
@@ -191,11 +192,11 @@ From this, you will clone to Exacloud/Norm
 
 From the Linux command line on Exacloud/Norm:
 
-1. Navigate into the working directory
+1. Navigate to parent directory of the to-be-created working directory
 1. Clone for the bare repo
 
 ```
-$ cd <working-directory>
+$ cd <parent-directory>
 $ git clone <repo-name>.git
 ```
 
