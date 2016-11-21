@@ -1,6 +1,6 @@
 ---
 title: "Analytic Workflow with Git on Exacloud/Norm"
-date: "2016-11-16 15:39:08"
+date: "2016-11-21 11:41:16"
 author: Benjamin Chan (chanb@ohsu.edu)
 output:
   html_document:
@@ -35,10 +35,12 @@ These are the features I'm looking for in a project management workflow:
 # Git tutorials
 
 There are tons of Git and GitHub tutorials.
-These have a data analyst focus.
 
-* Karl Broman's [tutorial](http://kbroman.org/github_tutorial)
-* Mine Cetinkaya-Rundel's [tutorial](http://www2.stat.duke.edu/~cr173/Sta323_Sp16/git.html)
+* Basic tutorial to get started
+  * [Try Git](https://try.github.io/)
+* These have a data analyst focus.
+  * Karl Broman's [tutorial](http://kbroman.org/github_tutorial)
+  * Mine Cetinkaya-Rundel's [tutorial](http://www2.stat.duke.edu/~cr173/Sta323_Sp16/git.html)
 
 ---
 
@@ -137,6 +139,7 @@ From your local Git Bash command line:
 
 ```
 $ git remote add origin <username>@exacloud.ohsu.edu:<repo-name>.git
+$ git remote -v
 ```
 
 ![plot of chunk unnamed-chunk-5](figures/unnamed-chunk-5-1.png)
@@ -162,11 +165,11 @@ From this, you will clone to Exacloud/Norm
 
 From the Linux command line on Exacloud/Norm:
 
-1. Navigate into the working directory
+1. Navigate to parent directory of the to-be-created working directory
 1. Clone for the bare repo
 
 ```
-$ cd <working-directory>
+$ cd <parent-directory>
 $ git clone <repo-name>.git
 ```
 
