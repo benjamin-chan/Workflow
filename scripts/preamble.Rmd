@@ -27,7 +27,9 @@ These are the features I'm looking for in a project management workflow:
 # Git tutorials
 
 There are tons of Git and GitHub tutorials.
-These have a data analyst focus.
 
-* Karl Broman's [tutorial](http://kbroman.org/github_tutorial)
-* Mine Cetinkaya-Rundel's [tutorial](http://www2.stat.duke.edu/~cr173/Sta323_Sp16/git.html)
+* Basic tutorial to get started
+  * [Try Git](https://try.github.io/)
+* These have a data analyst focus.
+  * Karl Broman's [tutorial](http://kbroman.org/github_tutorial)
+  * Mine Cetinkaya-Rundel's [tutorial](http://www2.stat.duke.edu/~cr173/Sta323_Sp16/git.html)
