@@ -30,6 +30,7 @@ There are tons of Git and GitHub tutorials.
 
 * Basic tutorial to get started
   * [Try Git](https://try.github.io/)
+  * DataCamp's [Introduction to Git for Data Science](https://www.datacamp.com/courses/introduction-to-git-for-data-science)
 * These have a data analyst focus.
   * Karl Broman's [tutorial](http://kbroman.org/github_tutorial)
   * Mine Cetinkaya-Rundel's [tutorial](http://www2.stat.duke.edu/~cr173/Sta323_Sp16/git.html)
